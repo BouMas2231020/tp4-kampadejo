@@ -157,12 +157,21 @@ figcaption {
 }
 
 /* Menu principal */
-.logo {}
-
-@media (min-width: 700px) {
-    .logo {}
+.logo {
+    float: left;
+    width: 150px ;
+  
 }
 
+@media (min-width: 700px) {
+    .logo {
+        width: 180px;
+    }
+}
+
+¨.nav{
+    text-align: right;
+}
 
 
 

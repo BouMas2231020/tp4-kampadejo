@@ -6,13 +6,43 @@
     
     <title>Kampadejo - Expériences de camping</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Photos par Unsplash - https://unsplash.com/collections/315034/camping -->
     <!-- Icônes par Stephen Hutchings - Collection Typicons - Flaticon -->
 </head>
 
 <body>
+    <a href="#contenu" class="sauter screen-reader-only focusable">Allez au contenu</a>
     <!-- Lien Aller au contenu -->
-    <header class="entete">
+    <header role="banner" class="entete">
+        <nav class="nav nav--closed">
+            <a class="logo" href="index.html">
+                <img src="assets/images/logo.svg" alt="Accueil Kampadejo">
+                <ul class="nav__list">
+                    <li class="nav__list-item" >
+                        <a class="nav__link" href="#entreprise">
+                            Entreprise
+                        </a>
+                    </li>
+                    <li class="nav__list-item" >
+                        <a class="nav__link" href="#expériences">
+                            Expériences
+                        </a>
+                    </li>
+                    <li class="nav__list-item" >
+                        <a class="nav__link" href="#services">
+                            Services
+                        </a>
+                    </li>
+                    <li class="nav__list-item" >
+                        <a class="nav__link" href="#contact">
+                            contact
+                        </a>
+                    </li>
+                </ul>
+            </a>
+
+        </nav>
         <div class="conteneur">
             <!-- Menu principal -->
 
@@ -26,7 +56,7 @@
             </div>
         </div>
     </header>
-    <main>
+    <main role="main">
         <section class="entreprise conteneur rangee" id="entreprise">
             <div class="cols_7_de_12">
                 <h2 id="contenu">Notre entreprise</h2>
@@ -136,7 +166,7 @@
             </div>
         </section>
     </main>
-    <footer id="contact">
+    <footer role="contentinfo" id="contact">
         <div class="conteneur rangee">
             <div class="cols_4_de_12">
                 <h2>Nous joindre</h2>
@@ -181,7 +211,7 @@
     
     <!-- Script pour le menu mobile -->
     
-    <script src="tp4-kampadejo\assets\js\menu.js"></script>
+    <script src="assets\js\menu.js"></script>
 </body>
 
 </html>

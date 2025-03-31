@@ -16,11 +16,14 @@
 
 /* Bouton du menu */
 .nav__control {
-    background-color: rgba(145, 0, 145, 0.2);
+    color: white;
+    background: none;
     border: none;
     padding: 10px;
     min-width: 40px;
+   
 }
+
 
 @media (min-width: 600px) {
     .nav__control {
@@ -31,7 +34,7 @@
 .nav__control:hover,
 .nav__control:active {
     color: #fff;
-    background-color: darkmagenta;
+    background-color: rgba(255, 255, 255, 0.25);
 }
 
 .nav__control:focus {
@@ -47,7 +50,7 @@
      * de modifier l'apparence du outline par défaut des navigateurs.
      */
     outline-offset: -5px;
-    outline: darkmagenta auto 5px;
+    outline: #dba70d auto 5px;
 }
 
 
@@ -74,15 +77,24 @@
 @media (min-width: 600px) {
     .nav__list-item {
         display: inline-block;
+        width: auto;
+        padding: 0;
     }
 }
 
 /* Liens du menu */
 .nav__link {
-    background-color: rgba(145, 0, 145, 0.2);
+    background-color: none;
     display: block;
     padding: 5px 10px;
     width: 100%;
+}
+@media (min-width: 600px) {
+    .nav__link {
+        display: inline-block;
+        width: auto;
+        padding: 0;
+    }
 }
 
 .nav__link:link,
@@ -92,8 +104,8 @@
 }
 
 .nav__link:hover {
-    color: #fff;
-    background-color: darkmagenta;
+    color: #dba70d;
+    
 }
 
 .nav__link:active {
@@ -103,9 +115,16 @@
 
 
 .nav__link:focus {
-    outline-offset: -5px;
-    outline: darkmagenta auto 5px;
+    outline: none;
+    border-left: 5px solid #dba70d;
 }
+@media (min-width: 600px) {
+    .nav__link:focus {
+        border-left: none;
+        border-bottom: 5px solid #dba70d;
+    }
+}
+
 
 /** Une classe nav__link--active
     sert à définir un état différent
