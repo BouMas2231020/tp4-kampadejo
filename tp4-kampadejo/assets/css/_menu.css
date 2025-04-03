@@ -6,16 +6,38 @@
  * TABLE DES MATIÈRES
  * Palette de couleurs
  * Base commune
+ * - menu
  * - Bouton du menu
  * - Liste du menu
+ * - Item de la Liste 
  * - Liens du menu
  * Styles conditionnels au JavaScript
  */
 
 /****** Base commune *******/
+/* menu */
+
+.nav{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}   
+
+
+@media (min-width: 600px) {
+    .nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
 
 /* Bouton du menu */
 .nav__control {
+    display: flex;
+    gap: 5px;
     color: white;
     background: none;
     border: none;
@@ -34,7 +56,7 @@
 .nav__control:hover,
 .nav__control:active {
     color: #fff;
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: var(--clr-gis);
 }
 
 .nav__control:focus {
@@ -48,9 +70,11 @@
     /*
      * Les règles outline-offset et outline permettent
      * de modifier l'apparence du outline par défaut des navigateurs.
-     */
-    outline-offset: -5px;
-    outline: #dba70d auto 5px;
+     */      
+    outline: 3px solid #A6751B;     /* couleur et épaisseur */
+    outline-offset: -4px;            /* espace entre le bouton et l’outline */
+    border-radius: 4px;            /* coins arrondis */
+
 }
 
 
@@ -59,11 +83,17 @@
     content: "";
     width: 1em;
     height: 1em;
+    
     /* compléter pour afficher l’icône X */
+    background-image: url(../images/ico-fermer.svg);
+    background-repeat: no-repeat;
+
+    background-size: contain;
 }
 
 .nav--closed .nav__control:before {
     /* compléter pour afficher l’icône Hamburger */
+    background-image: url(../images/ico-menu.svg);
 }
 
 /* Liste du menu */
@@ -72,13 +102,42 @@
     padding: 0;
     list-style: none;
     max-height: none;
+    flex: 1 1 100%;
+    text-align: left;
+    
 }
+
+
+@media (min-width: 600px) {
+    .nav__list {
+        flex: none;
+        margin: auto 0;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    .nav__list::after {
+        content: "";
+        display: block;
+        height: 4px;
+        background-color: var(--clr-gis); /* trait gris clair */
+        width: 96%;
+        margin: 0 auto;
+        margin-top: 25px;
+    }
+    
+}
+
+
+/* Item de la Liste */
 
 @media (min-width: 600px) {
     .nav__list-item {
         display: inline-block;
         width: auto;
         padding: 0;
+        margin-right: 10px;
     }
 }
 
@@ -88,12 +147,14 @@
     display: block;
     padding: 5px 10px;
     width: 100%;
+    
 }
 @media (min-width: 600px) {
     .nav__link {
         display: inline-block;
         width: auto;
         padding: 0;
+        
     }
 }
 
@@ -104,24 +165,26 @@
 }
 
 .nav__link:hover {
-    color: #dba70d;
+    color: var(--clr-jaune);
     
 }
 
 .nav__link:active {
     color: #fff;
-    background-color: magenta;
+    background-color: rgb(129, 129, 3);
 }
 
 
 .nav__link:focus {
     outline: none;
-    border-left: 5px solid #dba70d;
+    border-left: var(--border-5px) solid var(--clr-jaune);
+    margin: 10px;
 }
 @media (min-width: 600px) {
     .nav__link:focus {
         border-left: none;
-        border-bottom: 5px solid #dba70d;
+        padding-bottom: 6px;
+        border-bottom: var(--border-5px) solid var(--clr-jaune);
     }
 }
 
@@ -131,13 +194,13 @@
     pour l'item de menu actif
     **/
 .nav__link--active {
-    border-left: 5px solid rgba(101, 68, 180, 1);
+    border-left: var(--border-5px) solid rgba(101, 68, 180, 1);
 }
 
 @media (min-width: 600px) {
     .nav__link--active {
         border-left: none;
-        border-bottom: 5px solid rgba(101, 68, 180, 1);
+        border-bottom: var(--border-5px) solid rgba(101, 68, 180, 1);
     }
 }
 
@@ -159,4 +222,5 @@
         max-height: 0;
         transition: max-height 0.5s;
     }
+
 }
